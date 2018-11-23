@@ -19,6 +19,7 @@ export default class BleModule{
                     }
                     reject(error);            
                 }else{
+                    
                     if (device.id === '0E:F3:EE:7E:79:00') {
                         console.log('Device: ', device.id, device);
                     }

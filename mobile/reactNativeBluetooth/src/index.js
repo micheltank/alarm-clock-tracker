@@ -58,9 +58,11 @@ export default class App extends Component {
                     }
                     this.setState({scaning:false});   
                 }else{
-                    console.log(device.id,device.name);
-                    this.deviceMap.set(device.id,device);
-                    this.setState({data:[...this.deviceMap.values()]});      
+                    if (device.id === '0E:F3:EE:7E:79:00') {
+                        console.log('Device: ', device.id, device);
+                        this.deviceMap.set(device.id,device);
+                        this.setState({data:[...this.deviceMap.values()]});      
+                    }
                 }              
             })
             this.scanTimer && clearTimeout(this.scanTimer);
